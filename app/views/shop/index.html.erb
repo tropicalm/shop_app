@@ -1,5 +1,15 @@
 <h1>Sklep z akcesoriami do tworzenia słodkości :)</h1>
 
+<h2>Kategorie</h2>
+<table>
+<% @categories.each do |category| %>
+	<tr>
+		<td><%= link_to "#{category.name}", category %></td>
+	</tr>
+<% end %>
+</table>
+
+<h2>Produkty</h2>
 <table>
 <% @products.each do |product| %>
 	<tr>
