@@ -3,7 +3,7 @@
 <table>
 <% @products.each do |product| %>
 	<tr>
-		<td><%= product.name %></td>
+		<td><%= link_to "#{product.name}", product %></td>
 	</tr>
 <% end %>
 </table>
