@@ -1,9 +1,5 @@
 <h1><%= @category.name %></h1>
 
-<table>
 <% @category.products.each do |product| %>
-	<tr>
-		<td><%= link_to "#{product.name}", product %></td>
-	</tr>
+	<p><%= link_to "#{product.name}", product %></p>
 <% end %>
-</table>

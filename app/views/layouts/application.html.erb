@@ -16,14 +16,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="#">ShopApp</a>
+          <%= link_to "ShopApp", root_path, :class => "brand" %>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Sklep</a></li>
-              <li><a href="products/">Produkty</a></li>
+              <li><%= link_to "Produkty", products_path %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
