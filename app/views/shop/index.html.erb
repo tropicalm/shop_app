@@ -1,19 +1,18 @@
-<h1>Sklep z akcesoriami do tworzenia słodkości :)</h1>
-
-<h2>Kategorie</h2>
-<table>
-<% @categories.each do |category| %>
-	<tr>
-		<td><%= link_to "#{category.name}", category %></td>
-	</tr>
-<% end %>
-</table>
-
-<h2>Produkty</h2>
-<table>
-<% @products.each do |product| %>
-	<tr>
-		<td><%= link_to "#{product.name}", product %></td>
-	</tr>
-<% end %>
-</table>
+<div class="row-fluid">
+	<div class="span3">
+		<div class="well sidebar-nav">
+			<ul class="nav nav-list">
+				<li class="nav-header">Kategorie</li>
+				<% @categories.each do |category| %>
+					<li><%= link_to "#{category.name}", category %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<div class="span9">
+		<div class="hero-unit">
+			<h1>Witaj!</h1>
+			<p>Zapraszam do sklepu z akcesoriami do tworzenia słodkości :)</p>
+		</div>
+	</div>
+</div>
