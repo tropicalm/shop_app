@@ -16,4 +16,8 @@ class Cart
 	def products
 		@session[:product_ids]
 	end
+
+	def clear
+		@session[:product_ids] = []
+	end
 end

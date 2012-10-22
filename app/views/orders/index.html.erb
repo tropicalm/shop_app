@@ -1,0 +1,18 @@
+<h1>Realizacja zamówienia</h1>
+
+<%= form_tag(orders_path) do %>
+	<%= label_tag(:first_name, "Imię:") %>
+ 	<%= text_field_tag(:first_name) %>
+
+	<%= label_tag(:first_name, "Nazwisko:") %>
+ 	<%= text_field_tag(:last_name) %> 	
+
+	<%= label_tag(:first_name, "Adres:") %>
+ 	<%= text_field_tag(:address) %> 	
+
+ 	<h3>Koszt zamówienia:</h3>
+	<p><%= @cart_sum %> zł</p>
+
+	<%= submit_tag("Realizuj") %>
+<% end %>
+

@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   def cart_elements
   	@cart_elements = Product.find(cart.products)
+  	@cart_sum = @cart_elements.reduce(0){|sum, el| sum + el.price }
   end
 
   def category_list

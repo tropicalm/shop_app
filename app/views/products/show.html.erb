@@ -2,8 +2,11 @@
 <p><%= @product.description %></p>
 
 <b><%= @product.price %> zł</b> <p><%= @test %></p>
-
-<%= form_tag(cart_products_path) do |f| %>
-	<%= hidden_field_tag(:product_id, params[:id]) %>
-	<%= submit_tag "Dodaj do koszyka", class: "btn-success" %>
+<% if(@cart.products.include?(Integer(params[:id]))) %>
+	<p>Masz już ten produkt w koszyku</p>
+<% else %>
+	<%= form_tag(cart_products_path) do |f| %>
+		<%= hidden_field_tag(:product_id, params[:id]) %>
+		<%= submit_tag "Dodaj do koszyka", class: "btn-success" %>
+	<% end %>
 <% end %>

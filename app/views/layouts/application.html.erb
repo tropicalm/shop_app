@@ -43,17 +43,20 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Koszyk</li>
-              <% @cart_elements.each do |el| %>
-                <p>
-                  <%= link_to cart_product_path(el.id), method: :delete do %>
-                    <i class="icon-remove icon-white"></i>
-                  <% end %>
-                  <%= link_to "#{el.name}", el %>
-                </p>
-              <% end %>
               <% if @cart_elements.empty? %>
                 <p>Brak produktów w koszyku</p>
-              <% end %>              
+              <% else %>               
+                <% @cart_elements.each do |el| %>
+                  <p>
+                    <%= link_to cart_product_path(el.id), method: :delete do %>
+                      <i class="icon-remove icon-white"></i>
+                    <% end %>
+                    <%= link_to "#{el.name}", el %>
+                  </p>
+                <% end %>
+                <%= link_to "Realizuj", orders_path, class: "btn btn-success" %>
+              <% end %>
+            
             </ul>
           </div>
 
