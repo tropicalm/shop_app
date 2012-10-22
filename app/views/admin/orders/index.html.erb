@@ -1,1 +1,18 @@
-Hello Admin
+<table class="table table-striped">
+	<thead><tr><td>Id</td><td>Data</td><td>Zamawiający</td><td>Produkty</td></tr></thead>
+	<tbody>
+		<% @orders.each do |order| %>
+			<tr>
+				<td><%= order.id %></td>
+				<td><%= time_tag order.created_at %></td>
+				<td><%= order.buyer.first_name %> <%= order.buyer.last_name %></td>
+				<td>
+					<% order.order_items.each do |item| %>
+						<p><%= item.product.name %></p>
+					<% end %>
+				</td>
+			</tr>
+
+		<% end %>
+	</tbody>
+</table>
