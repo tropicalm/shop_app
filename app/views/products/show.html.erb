@@ -5,5 +5,5 @@
 
 <%= form_tag(cart_products_path) do |f| %>
 	<%= hidden_field_tag(:product_id, params[:id]) %>
-	<%= submit_tag("Dodaj do koszyka") %>
+	<%= submit_tag "Dodaj do koszyka", class: "btn-success" %>
 <% end %>
