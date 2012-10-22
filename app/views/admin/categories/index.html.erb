@@ -1,0 +1,13 @@
+<table class="table table-striped">
+	<thead><tr><td>Id</td><td>Nazwa</td><td></td><td></td></tr></thead>
+	<tbody>
+		<% @categories.each do |category| %>
+			<tr>
+				<td><%= category.id %></td>
+				<td><%= category.name %></td>
+				<td><%= link_to "edytuj", edit_admin_category_path(category) %>
+				<td><%= link_to "usuń", [:admin, category], :method => :delete, :confirm => "Na pewno?" %>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -31,6 +31,19 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
+          <% if admin_admin_user_signed_in? %>
+            <div class="well sidebar-nav">
+              <ul class="nav nav-list">
+                <li class="nav-header">Administracja</li>
+                <li><%= link_to "Lista zamówień", admin_root_path %></li>
+                <li><%= link_to "Lista kategorii", admin_categories_path %></li>
+                <li><%= link_to "Lista produktów", admin_root_path %></li>
+                <li><%= link_to "Dodaj kategorię", new_admin_category_path %></li>
+                <li><%= link_to "Dodaj produkt", admin_root_path %></li>
+                
+              </ul>
+            </div>
+          <% end %>
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Kategorie</li>

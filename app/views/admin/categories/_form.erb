@@ -1,0 +1,6 @@
+<%= form_for([:admin, @category]) do |f| %>
+	<%= f.label :Nazwa %>
+	<%= f.text_field :name %>
+	</br>
+	<%= f.submit :value => "Zapisz" %> 
+<% end %>
