@@ -10,6 +10,7 @@ ShopApp::Application.routes.draw do
     devise_for :admin_users
     root :to => "orders#index"
     resources :categories
+    resources :products
   end
 
   # The priority is based upon order of creation:

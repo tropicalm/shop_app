@@ -1,0 +1,12 @@
+<%= form_for([:admin, @product]) do |f| %>
+	<%= f.label :Nazwa %>
+	<%= f.text_field :name %>
+	<%= f.label :Opis %>
+	<%= f.text_area :description, :rows => 5 %>
+	<%= f.label :Kategoria %>
+	<%= f.select :category_id, @categories_map %>	
+	<%= f.label :Cena %>
+	<%= f.number_field :price %>	
+	</br>
+	<%= f.submit :value => "Zapisz" %> 
+<% end %>
