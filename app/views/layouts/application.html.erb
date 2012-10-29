@@ -73,6 +73,32 @@
             </ul>
           </div>
 
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Szukaj</li>
+              <li>
+                <%= search_form_for @q, :url => search_products_path,
+                        :html => {:method => :post} do |f| %>
+
+                  <%= f.label :name_cont, "Nazwa" %>
+                  <%= f.text_field :name_cont %>
+
+                  <%= f.label :name_cont, "Opis" %>
+                  <%= f.text_field :description_cont %>
+
+                  <%= f.label :price, "Cena" %>
+                  <%= f.label :price_from, "od: " %>
+                  <%= f.number_field :price_gteq %>
+
+                  <%= f.label :price_to, "do: " %>
+                  <%= f.number_field :price_lteq %>
+
+                  <%= f.submit "Szukaj" %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+
         </div>
         <div class="span9">
           <%= yield %>

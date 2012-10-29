@@ -2,10 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   helper_method :cart
-  before_filter :cart_elements, :category_list
+  before_filter :cart_elements, :category_list, :product_search
 
   def cart
-	@cart ||= Cart.new(session)  	
+    @cart ||= Cart.new(session)  	
   end
 
   def cart_elements
@@ -17,4 +17,7 @@ class ApplicationController < ActionController::Base
   	@categories = Category.all
   end
 
+  def product_search
+    @q = Product.search(params[:q])
+  end
 end
